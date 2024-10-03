@@ -146,9 +146,9 @@ int do_http_upgrade(const ulong size, const int upgrade_type){
 				(unsigned long int)(WEBFAILSAFE_UPLOAD_RAM_ADDRESS+size),
 				//factory.bin由kernel+rootfs组成，其中kernel固定6MB大小
 				(unsigned long int)WEBFAILSAFE_UPLOAD_RAM_ADDRESS,
-				(unsigned long int)0x600000,
-				(unsigned long int)(WEBFAILSAFE_UPLOAD_RAM_ADDRESS+0x600000),
-				(unsigned long int)(size-0x600000),
+				(unsigned long int)0xc00000,
+				(unsigned long int)(WEBFAILSAFE_UPLOAD_RAM_ADDRESS+0xc00000),
+				(unsigned long int)(size-0xc00000),
 				//这部分改两个BOOTCONFIG，启动系统0，即rootfs
 				(unsigned long int)WEBFAILSAFE_UPLOAD_RAM_ADDRESS,
 				(unsigned long int)(WEBFAILSAFE_UPLOAD_RAM_ADDRESS+0x80),
