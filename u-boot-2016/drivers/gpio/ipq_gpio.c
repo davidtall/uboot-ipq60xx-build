@@ -148,7 +148,7 @@ void gl_led_init(void)
 	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_RED_LED);
 	writel(0x203, gpio_base);
 	gpio_direction_output(GPIO_RED_LED, 0x1);
-	
+
 	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_GREEN_LED);
 	writel(0x203, gpio_base);
 	gpio_direction_output(GPIO_GREEN_LED, 0x1);
@@ -169,8 +169,6 @@ void gl_btn_init(void)
 {
 	unsigned int *gpio_base;
 
-	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_JOYLINK_BTN);
-	writel(0xc3, gpio_base);
 
 	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_RESET_BTN);
 	writel(0xc3, gpio_base);
