@@ -20,25 +20,23 @@
 	config_name = "config@cp03-c1";
 
 	aliases {
-		led-boot = &led_yellow;
-		led-failsafe = &led_blue;
-		led-running = &led_blue;
-		led-upgrade = &led_yellow;
-		serial0 = &blsp1_uart3;
-
+		sdhc1 = "/soc/sdhci@7804000";
+		ethernet0 = "/soc/dp1";
 		ethernet1 = "/soc/dp2";
 		ethernet2 = "/soc/dp3";
 		ethernet3 = "/soc/dp4";
 		ethernet4 = "/soc/dp5";
 	};
 	ess-switch@3a000000 {
-		switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
-		switch_lan_bmp = <0x1e>; /* lan port bitmap */
-		switch_wan_bmp = <0x20>; /* wan port bitmap */
-		switch_inner_bmp = <0xc0>; /*inner port bitmap*/
-		switch_mac_mode = <0x0>; /* mac mode for uniphy 0*/
-		switch_mac_mode1 = <0xff>; /* mac mode for uniphy 1*/
-		switch_mac_mode2 = <0xff>; /* mac mode for uniphy 2*/
+		switch_cpu_bmp = <0x01>;
+		switch_lan_bmp = <0x1e>;
+		switch_wan_bmp = <0x20>;
+		switch_inner_bmp = <0xc0>;
+		switch_mac_mode = <0x00>;
+		switch_mac_mode1 = <0xff>;
+		switch_mac_mode2 = <0xff>;
+		bm_tick_mode = <0x00>;
+		tm_tick_mode = <0x00>;
 
 		qcom,port_phyinfo {
 			port@0 {
