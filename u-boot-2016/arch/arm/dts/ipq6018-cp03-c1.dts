@@ -32,29 +32,6 @@
 		ethernet4 = "/soc/dp5";
 	};
 	soc {
-		mdio: mdio {
-			pinctrl-0 = <&mdio_pins>;
-			pinctrl-names = "default";
-			phy-reset-gpio = <&tlmm 75 0>;
-			status = "ok";
-
-			phy0: ethernet-phy@0 {
-				reg = <0>;
-			};
-			phy1: ethernet-phy@1 {
-				reg = <1>;
-			};
-			phy2: ethernet-phy@2 {
-				reg = <2>;
-			};
-			phy3: ethernet-phy@3 {
-				reg = <3>;
-			};
-			phy4: ethernet-phy@4 {
-				reg = <4>;
-			};
-		};
-
 		ess-switch {
 			switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
 			switch_lan_bmp = <0x1e>; /* lan port bitmap */
@@ -137,44 +114,5 @@
 		};
 	};
 
-	keys {
-		compatible = "gpio-keys";
-		pinctrl-0 = <&button_pins>;
-		pinctrl-names = "default";
-
-		reset {
-			label = "reset";
-			linux,code = <KEY_RESTART>;
-			gpios = <&tlmm 19 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
-			debounce-interval = <60>;
-		};
-	};
-
-	leds {
-		compatible = "gpio-leds";
-		pinctrl-0 = <&leds_pins>;
-		pinctrl-names = "default";
-
-		led_blue: system-blue {
-			label = "blue:system";
-			gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
-		};
-
-		led_yellow: system-yellow {
-			label = "yellow:system";
-			gpios = <&tlmm 30 GPIO_ACTIVE_HIGH>;
-		};
-
-		network-blue {
-			label = "blue:network";
-			gpios = <&tlmm 31 GPIO_ACTIVE_HIGH>;
-		};
-
-		network-yellow {
-			label = "yellow:network";
-			gpios = <&tlmm 32 GPIO_ACTIVE_HIGH>;
-		};
-	};
 };
 
