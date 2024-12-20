@@ -149,20 +149,6 @@
 		};
 	};
 
-	keys {
-		compatible = "gpio-keys";
-		pinctrl-0 = <&button_pins>;
-		pinctrl-names = "default";
-
-		reset {
-			label = "reset";
-			linux,code = <KEY_RESTART>;
-			gpios = <&tlmm 19 GPIO_ACTIVE_LOW>;
-			linux,input-type = <1>;
-			debounce-interval = <60>;
-		};
-	};
-
 	leds {
 		compatible = "gpio-leds";
 		pinctrl-0 = <&leds_pins>;
