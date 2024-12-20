@@ -169,8 +169,8 @@ void gl_btn_init(void)
 {
 	unsigned int *gpio_base;
 
-	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_JOYLINK_BTN);
-	writel(0xc3, gpio_base);
+	//gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_JOYLINK_BTN);
+	//writel(0xc3, gpio_base);
 
 	gpio_base = (unsigned int *)GPIO_CONFIG_ADDR(GPIO_RESET_BTN);
 	writel(0xc3, gpio_base);
