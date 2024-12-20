@@ -20,39 +20,49 @@
 	config_name = "config@cp03-c1";
 
 	aliases {
-		console = "/serial@78B1000";
-		usb0 = "/xhci@8a00000";
-		i2c1 = "/i2c@78ba000";
+		led-boot = &led_yellow;
+		led-failsafe = &led_blue;
+		led-running = &led_blue;
+		led-upgrade = &led_yellow;
+		serial0 = &blsp1_uart3;
+
+		ethernet1 = "/soc/dp2";
+		ethernet2 = "/soc/dp3";
+		ethernet3 = "/soc/dp4";
+		ethernet4 = "/soc/dp5";
 	};
-	ess-switch {
-		switch_mac_mode = <PORT_WRAPPER_PSGMII>;
-		switch_mac_mode1 = <UNUSED>;
-		malibu_gpio = <75>;
-		malibu_gpio_cnt = <1>;
-		mdc_mdio_gpio = <64 65>;
-		malibu2port_phy = <1>;
-		port_phyinfo {
+	ess-switch@3a000000 {
+		switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
+		switch_lan_bmp = <0x1e>; /* lan port bitmap */
+		switch_wan_bmp = <0x20>; /* wan port bitmap */
+		switch_inner_bmp = <0xc0>; /*inner port bitmap*/
+		switch_mac_mode = <0x0>; /* mac mode for uniphy 0*/
+		switch_mac_mode1 = <0xff>; /* mac mode for uniphy 1*/
+		switch_mac_mode2 = <0xff>; /* mac mode for uniphy 2*/
+
+		qcom,port_phyinfo {
 			port@0 {
+				port_id = <1>;
 				phy_address = <0>;
-				phy_type = <MALIBU_PHY_TYPE>;
 			};
 			port@1 {
+				port_id = <2>;
 				phy_address = <1>;
-				phy_type = <MALIBU_PHY_TYPE>;
 			};
 			port@2 {
-				phy_address = <4>;
-				phy_type = <MALIBU_PHY_TYPE>;
+				port_id = <3>;
+				phy_address = <2>;
 			};
 			port@3 {
+				port_id = <4>;
 				phy_address = <3>;
-				phy_type = <MALIBU_PHY_TYPE>;
 			};
 			port@4 {
-				phy_address = <2>;
-				phy_type = <MALIBU_PHY_TYPE>;
+				port_id = <5>;
+				phy_address = <4>;
 			};
 		};
 	};
+
 };
 
