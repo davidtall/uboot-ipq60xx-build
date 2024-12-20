@@ -148,32 +148,6 @@
 			phy-mode = "sgmii";
 		};
 	};
-
-	leds {
-		compatible = "gpio-leds";
-		pinctrl-0 = <&leds_pins>;
-		pinctrl-names = "default";
-
-		led_blue: system-blue {
-			label = "blue:system";
-			gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
-		};
-
-		led_yellow: system-yellow {
-			label = "yellow:system";
-			gpios = <&tlmm 30 GPIO_ACTIVE_HIGH>;
-		};
-
-		network-blue {
-			label = "blue:network";
-			gpios = <&tlmm 31 GPIO_ACTIVE_HIGH>;
-		};
-
-		network-yellow {
-			label = "yellow:network";
-			gpios = <&tlmm 32 GPIO_ACTIVE_HIGH>;
-		};
-	};
 };
 
 &tlmm {
