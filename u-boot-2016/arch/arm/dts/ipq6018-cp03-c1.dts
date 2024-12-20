@@ -20,7 +20,7 @@
 	qcom,msm-id = <0x192 0x00>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
-	interrupt-parent = <&intc>;
+	interrupt-parent = <0x01>;
 
 	aliases {
 		sdhc1 = "/soc/sdhci@7804000";
