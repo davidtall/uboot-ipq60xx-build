@@ -12,12 +12,13 @@
  */
 
 /dts-v1/;
-
+#include "ipq6018-soc.dtsi"
 / {
 	MP_256;
 	model = "QCA, IPQ6018-CP03-C1";
 	compatible = "qca,ipq6018", "qca,ipq6018-cp03-c1";
 	machid = <0x8030200>;
+	config_name = "config@cp03-c1";
 	qcom,msm-id = <0x192 0x00>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
